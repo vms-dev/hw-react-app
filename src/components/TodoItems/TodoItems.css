@@ -1,0 +1,25 @@
+.todoMsg {
+    color: black;
+}
+
+.todoMsg-completed {
+    color: red;
+}
+
+.completeBtn {
+    margin-top: -6px;
+    margin-left: 4px;
+    float: right;
+    /* position: static; */
+    width: 35px;
+    height: 32px;
+}
+
+.deleteBtn {
+    margin-top: -6px;
+    margin-left: 4px;
+    float: right;
+    /* position: static; */
+    width: 35px;
+    height: 32px;
+}

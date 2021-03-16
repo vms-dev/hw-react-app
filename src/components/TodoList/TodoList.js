@@ -11,13 +11,16 @@ class TodoList extends Component {
         };
 
         this.addItem = this.addItem.bind(this);
+        this.deleteItem = this.deleteItem.bind(this);
+        this.completeItem = this.completeItem.bind(this);
     }
 
     addItem(e){
         if (this._inputElement.value !== "") {
             var newItem = {
                 text: this._inputElement.value,
-                key: Date.now()
+                key: Date.now(),
+                isCompleted: false
             };
 
             this.setState((prevState) => {
@@ -34,6 +37,28 @@ class TodoList extends Component {
         e.preventDefault();
     }
 
+    deleteItem(key) {
+        let filteredItems = this.state.items.filter(function (item) {
+            return (item.key !== key);
+        });
+         
+        this.setState({
+            items: filteredItems
+        });
+    }
+
+    completeItem(key) {
+        let stateCopy = { ...this.state };
+        let indexItems = stateCopy.items.findIndex(function (item) {
+            return (item.key === key);
+        });
+
+        if (typeof indexItems !== "undefined") {
+            stateCopy.items[indexItems].isCompleted = true;
+            this.setState(stateCopy);
+        }
+    }
+
     render() {
         return(
             <div className="todoListMain">
@@ -44,7 +69,10 @@ class TodoList extends Component {
                         <button type="submit">add</button>
                     </form>
                 </div>
-                <TodoItems entries={this.state.items}/>
+                <TodoItems entries={this.state.items} 
+                           delete={this.deleteItem}
+                           complete={this.completeItem}
+                />
             </div>
         );
     }    
