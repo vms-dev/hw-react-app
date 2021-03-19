@@ -1,0 +1,34 @@
+.loginForm {
+    background-color: white;
+    width: 350px;
+    height: 400px;
+    position: relative;
+
+    text-align: center;
+    border: 1px solid rgb(170, 170, 170);
+    border-radius: 8px;
+}
+/* 
+.submitBtn {
+    background-color: #7066ff;
+    text-align: center;
+    width: 270px;
+    height: 45px;
+    position: relative;
+} */
+
+.submitBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 270px;
+    height: 45px;
+    background-color: #7066ff;
+    border: 1px solid rgb(170, 170, 170);
+    border-radius: 4px;
+    margin: auto;
+  }

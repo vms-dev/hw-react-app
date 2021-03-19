@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 //import App from './App';
-import TodoList from './components/TodoList/TodoList';
+//import TodoList from './components/TodoList/TodoList';
+import SingupForm from './components/FormikForm/FormikForm';
 //import reportWebVitals from './reportWebVitals';
 
 
@@ -10,7 +11,7 @@ const destination = document.querySelector("#root")
 
 ReactDOM.render( 
 <div>
-    <TodoList/>
+    <SingupForm/>
 </div>, 
 destination);
 
